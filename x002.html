@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asma Shoes Online Store</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://imgtr.ee/images/2023/11/06/5254d1ec845406340c28e05256034cb9.png'); /* Replace with your background image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .menu {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .menu a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        select, input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #0074D9;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Asma Casual Shoes Online Store</h1>
+    </div>
+
+    <div class="menu">
+        <a href="https://starsystems.in/">Home</a>
+        <a href="https://starsystems.in/mobile-development/">Shop</a>
+        <a href="https://starsystems.in/cloud-infrastructure-management/">About</a>
+        <a href="https://starsystems.in/careers/">Contact</a>
+    </div>
+
+    <div class="container">
+        <h2>Select Shoe Size and Colour</h2>
+        <form>
+            <label for="size">Select Size:</label>
+            <select id="size" name="size">
+                <option value="8">Size 8</option>
+                <option value="9">Size 9</option>
+                <option value="10">Size 10</option>
+                <option value="11">Size 11</option>
+                <option value="12">Size 12</option>
+            </select>
+
+            <label for="color">Select Color:</label>
+            <select id="color" name="color">
+                <option value="black">Black</option>
+                <option value="brown">Brown</option>
+                <option value="gray">Gray</option>
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+
+            <h2>Total Amount: Rs. <span id="total_amount">0.00</span></h2>
+
+            <button type="button" id="calculate_total">Calculate Total</button>
+
+            <!-- Payment Button -->
+            <button type="button" id="pay_now">Pay Now</button>
+        </form>
+    </div>
+	
+	 <script>
+        // Define the price per pair of shoes
+        const shoePrices = {
+            "8": {
+                "black": 50.00,
+                "brown": 55.00,
+                "gray": 50.00,
+                "blue": 55.00,
+                "red": 60.00,
+            },
+            "9": {
+                "black": 50.00,
+                "brown": 55.00,
+                "gray": 50.00,
+                "blue": 55.00,
+                "red": 60.00,
+            },
+            "10": {
+                "black": 50.00,
+                "brown": 55.00,
+                "gray": 50.00,
+                "blue": 55.00,
+                "red": 60.00,
+            },
+            "11": {
+                "black": 50.00,
+                "brown": 55.00,
+                "gray": 50.00,
+                "blue": 55.00,
+                "red": 60.00,
+            },
+            "12": {
+                "black": 55.00,
+                "brown": 60.00,
+                "gray": 55.00,
+                "blue": 60.00,
+                "red": 65.00,
+            },
+        };
+
+        // Calculate the total amount based on the selected options
+        document.getElementById("calculate_total").addEventListener("click", function () {
+            const selectedSize = document.getElementById("size").value;
+            const selectedColor = document.getElementById("color").value;
+            const quantity = parseInt(document.getElementById("quantity").value);
+
+            const price = shoePrices[selectedSize][selectedColor];
+            const totalAmount = quantity * price;
+
+            document.getElementById("total_amount").textContent = totalAmount.toFixed(2);
+        });
+
+        // Add your payment processing logic for the "Pay Now" button here
+        document.getElementById("pay_now").addEventListener("click", function () {
+            // Replace this with your payment processing code
+            alert("Redirect to payment gateway or process payment here.");
+        });
+    </script>
+	
+</body>
+</html>
